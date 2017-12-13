@@ -28,7 +28,8 @@ class Article extends Model implements Transformable
 
     public function getStatusAttribute($value)
     {
-        return $value == 1 ? '私密' : '公开';
+//        return $value == 1 ? '私密' : '公开';
+        return $value;
     }
 
     /**

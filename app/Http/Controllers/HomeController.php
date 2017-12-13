@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests;
+use App\Repositories\ArticleShowCriteria;
 use Illuminate\Http\Request;
 use App\Repositories\ArticleRepositoryEloquent;
 
@@ -22,6 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $this->article->pushCriteria(new ArticleShowCriteria());
+
         $articles = $this->article
             ->with([
                 'category'

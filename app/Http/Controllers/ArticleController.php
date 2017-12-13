@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\ArticleShowCriteria;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -19,6 +20,8 @@ class ArticleController extends Controller
 
     public function index($id)
     {
+        $this->article->pushCriteria(new ArticleShowCriteria());
+
         $article = $this->article->find($id);
         $article->read_count = $article->read_count + 1;
         $article->save();

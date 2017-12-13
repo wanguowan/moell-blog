@@ -21,6 +21,7 @@ class TagController extends Controller
     {
         $tag = $this->tag->find($id);
         $articles = $tag->article()
+            ->where('status', 1)
             ->orderBy('sort','desc')
             ->orderBy('id', 'desc')
             ->paginate(15);

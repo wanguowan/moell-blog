@@ -76,7 +76,29 @@
 
 
                     <div class="box-footer">
-                        <button type="submit" class="btn btn-primary">修改</button>
+                        <div class="form-group">
+                            <label for="cate_id">文章状态</label>
+                            <div class="row">
+                                <div class='col-md-6'>
+                                    <select class="form-control" id="status" name="status">
+                                        @if (0===$article->status)
+                                            <option value="0" selected="selected">草稿</option>
+                                            <option value="1">发布</option>
+                                            <option value="2">删除</option>
+                                        @elseif(1===$article->status)
+                                            <option value="0">草稿</option>
+                                            <option value="1" selected="selected">发布</option>
+                                            <option value="2">删除</option>
+                                        @else
+                                            <option value="0">草稿</option>
+                                            <option value="1">发布</option>
+                                            <option value="2" selected="selected">删除</option>
+                                        @endif
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">保存</button>
                         <button type="button" id="reset-btn" class="btn btn-warning">重置</button>
                     </div>
                 </form>

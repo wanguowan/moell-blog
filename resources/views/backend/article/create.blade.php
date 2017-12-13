@@ -74,7 +74,19 @@
 
 
                     <div class="box-footer">
-                        <button type="submit" id="submit-article" class="btn btn-primary">发布</button>
+                        <div class="form-group">
+                            <label for="cate_id">文章状态</label>
+                            <div class="row">
+                                <div class='col-md-6'>
+                                    <select class="form-control" id="status" name="status">
+                                        <option value="0">草稿</option>
+                                        <option value="1">发布</option>
+                                        <option value="2">删除</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" id="submit-article" class="btn btn-primary">创建</button>
                         <button type="button" id="reset-btn" class="btn btn-warning">重置</button>
                     </div>
                 </form>

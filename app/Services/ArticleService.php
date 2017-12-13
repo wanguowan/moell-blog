@@ -126,7 +126,8 @@ class ArticleService
             'keyword',
             'desc',
             'cate_id',
-            'user_id'
+            'user_id',
+            'status'
         ]), [
             'content' => $request->get('markdown-content'),
             'html_content' => $request->get('html-content')

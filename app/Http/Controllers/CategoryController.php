@@ -20,6 +20,7 @@ class CategoryController extends Controller
     {
         $category = $this->category->find($id);
         $articles = $category->article()
+            ->where('status', 1)
             ->orderBy('sort','desc')
             ->orderBy('id', 'desc')
             ->paginate(15);
